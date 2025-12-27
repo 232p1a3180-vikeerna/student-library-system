@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Library Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="login-page">
+     <div class="login-card">
+    <h2>Library Login</h2>
+
+    <input type="email" id="userId" placeholder="College Email ID">
+
+    <div class="password-wrapper">
+        <input type="password" id="password" placeholder="Password" oninput="toggleEyeIcon()">
+        <span id="eyeIcon" onclick="togglePassword()">👁️</span>
+    </div>
+
+    <button onclick="login()">Login</button>
+    <p id="loginError"></p>
+</div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

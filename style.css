@@ -1,0 +1,278 @@
+:root {
+    --bg: #0f172a;
+    --card: #020617;
+    --text: #e5e7eb;
+    --accent: #38bdf8;
+}
+
+.light-theme {
+    --bg: #f8fafc;
+    --card: #ffffff;
+    --text: #020617;
+    --accent: #2563eb;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    transition: .4s;
+}
+
+/* LOGIN */
+.login-page {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-card {
+    width: 340px;
+    padding: 35px;
+    background: rgba(255, 255, 255, .1);
+    backdrop-filter: blur(12px);
+    border-radius: 18px;
+    text-align: center;
+}
+
+.login-card h2 {
+    margin-bottom: 20px;
+}
+
+.login-card input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: none;
+}
+
+.login-card button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(45deg, #38bdf8, #2563eb);
+    border: none;
+    border-radius: 10px;
+    color: white;
+}
+
+/* NAVBAR */
+.navbar {
+    background: var(--card);
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links button {
+    margin-left: 10px;
+    padding: 8px 16px;
+    border: 1px solid var(--accent);
+    background: transparent;
+    color: var(--accent);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.nav-links button:hover {
+    background: var(--accent);
+    color: black;
+}
+
+/* SEARCH */
+.header {
+    display: flex;
+    justify-content: center;
+    margin: 25px 0;
+}
+
+.search-bar {
+    width: 90%;
+    max-width: 520px;
+    padding: 12px;
+    border-radius: 30px;
+    border: none;
+}
+
+/* BOOKS */
+.book-container {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.book-card {
+    background: var(--card);
+    padding: 15px;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.book-card:hover {
+    transform: translateY(-8px) scale(1.02);
+}
+
+.book-card img {
+    width: 100%;
+    height: 150px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.status {
+    color: #22c55e;
+}
+
+/* REQUEST */
+/* ===== REQUEST SECTION ===== */
+.request-section {
+    margin: 60px auto;
+    padding: 30px;
+    max-width: 480px;
+    background: var(--card);
+    /* Dark card background */
+    border-radius: 20px;
+    border: 2px solid #1e293b;
+    /* Dark border */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    /* Subtle shadow for 3D effect */
+    transition: background 0.4s, border 0.3s, box-shadow 0.3s;
+}
+
+.request-section:hover {
+    border-color: #38bdf8;
+    /* Accent color on hover */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Heading centered */
+.request-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+/* Inputs styled for dark theme */
+.request-section input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    border: 1px solid #1e293b;
+    /* Dark border for inputs */
+    background: var(--bg);
+    /* Matches dark theme background */
+    color: var(--text);
+    transition: border 0.3s, background 0.3s;
+}
+
+.request-section input:focus {
+    border-color: #38bdf8;
+    /* Highlight on focus */
+    outline: none;
+}
+
+/* Submit button (blue with hover) */
+.request-section button {
+    width: 100%;
+    padding: 12px;
+    background: #2563eb;
+    /* Blue button */
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.request-section button:hover {
+    background: #1d4ed8;
+    /* Darker blue on hover */
+    transform: translateY(-2px);
+}
+
+.request-section button:active {
+    transform: scale(0.98);
+}
+
+/* RESPONSIVE */
+@media(max-width:900px) {
+    .book-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width:500px) {
+    .book-container {
+        grid-template-columns: 1fr;
+    }
+}
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #0f172a;
+  width: 350px;
+  margin: 100px auto;
+  padding: 20px;
+  border-radius: 12px;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.modal-content img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.close-btn {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 25px;
+  cursor: pointer;
+}
+.password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.password-wrapper input {
+    width: 100%;
+    padding-right: 40px;
+}
+
+#eyeIcon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    display: none;   /* hidden by default */
+    font-size: 18px;
+}

@@ -1,0 +1,44 @@
+
+    <!-- SEARCH -->
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Student Library</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body class="library-body"> <!-- NAVBAR -->
+        <nav class="navbar">
+            <h2>📚 Student Library</h2>
+            <div class="nav-links"> <button onclick="showAvailable()">Available Books</button> <button
+                    onclick="showRequested()">Requested Books</button> <button class="theme-toggle"
+                    onclick="toggleTheme()">🌙</button> <button onclick="logout()">Logout</button> </div>
+        </nav> <!-- SEARCH -->
+        <div class="header"> <input type="text" class="search-bar" placeholder="Search books..."
+                onkeyup="searchBooks()"> </div> <!-- BOOKS -->
+        <div class="book-container" id="bookContainer"></div> <!-- REQUEST BOOK (ONLY FOR AVAILABLE BOOKS) -->
+        <div class="request-section" id="requestSection">
+            <h2 class="request-title">Request a Book</h2> <input type="text" id="reqStudent" placeholder="Student Name">
+            <input type="text" id="reqBook" placeholder="Book Name"> <button onclick="submitRequest()">Submit
+                Request</button>
+        </div>
+
+<!-- Book Popup Modal -->
+<!-- POPUP MODAL -->
+<div id="bookModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">×</span>
+    <img id="modalBookImage">
+    <h2 id="modalBookTitle"></h2>
+    <p id="modalBookAuthor"></p>
+  </div>
+</div>
+
+
+        <script src="script.js"></script>
+    </body>
+
+    </html>
