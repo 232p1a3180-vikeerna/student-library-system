@@ -138,7 +138,7 @@ function toggleTheme() {
 
 /* LOGOUT */
 function logout() {
-    window.location.href = "login.html";
+    window.location.href = "index.html";
 }
 
 function openModal(title, author, image) {
@@ -176,4 +176,5 @@ function toggleEyeIcon() {
         eyeIcon.textContent = "👁️";
     }
 }
+
 
